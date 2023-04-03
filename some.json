@@ -1,0 +1,17 @@
+[
+    {
+        "updated": "root"
+    },
+    [
+        "hello",
+        "wolrd!",
+        {
+            "updated": "in array",
+            "deep": [
+                {
+                    "updated": "deep"
+                }
+            ]
+        }
+    ]
+]
