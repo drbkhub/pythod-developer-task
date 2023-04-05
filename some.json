@@ -1,17 +1,56 @@
 [
-    {
-        "updated": "root"
-    },
+
     [
-        "hello",
-        "wolrd!",
-        {
-            "updated": "in array",
-            "deep": [
-                {
-                    "updated": "deep"
-                }
+        [
+            [
+                [
+                    [
+                        {
+                            "updated": "The most deep!"
+                        }
+                    ]
+                ]
             ]
-        }
-    ]
+        ]
+    ],
+
+    {
+        "updated": "1",
+        "deep": [
+            {},
+            {
+                "array": [
+                    {
+                        "updated": "1-3"
+                    }
+                ]
+            },
+            {
+                "updated": "1-2"
+            },
+            {
+                "updated": "1-2 last one"
+            }
+        ]
+    },
+    {
+        "updated": "2",
+        "deep": [
+            {},
+            {
+                "array": [
+                    {
+                        "updated": "2-3"
+                    }
+                ]
+            },
+            {
+                "updated": "2-2"
+            },
+            {
+                "updated": "2-2 last one"
+            }
+        ]
+    }
+
 ]
