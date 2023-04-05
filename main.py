@@ -7,7 +7,7 @@ from urllib.request import urlopen
 
 # 1
 def swap_bytes(x):
-    return x >> 8 | (x & 0b0000000011111111) << 8
+    return  x >> 8 | (x & 0xFF) << 8
 
 
 # 2
