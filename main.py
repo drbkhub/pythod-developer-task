@@ -1,7 +1,7 @@
 import json
 from collections import Counter
 from datetime import datetime
-from typing import Callable, Mapping, Sequence
+from typing import Mapping, Sequence
 from urllib.request import urlopen
 
 
@@ -33,7 +33,7 @@ with open("readme.md", "w") as f:
 
 
 # 4
-def update_nested_key(adict: Mapping | Sequence, key: str, call: Callable) -> None:
+def update_nested_key(adict: Mapping | Sequence, key: str, value: str) -> None:
   stack = [adict]
   while stack:
     d = stack.pop()
@@ -43,7 +43,7 @@ def update_nested_key(adict: Mapping | Sequence, key: str, call: Callable) -> No
                 stack.append(item)
     elif isinstance(d, dict):
         if key in d:
-            d[key] = call(d[key])
+            d[key] = value
         for k, v in d.items():
             if isinstance(v, (dict, list)):
                 stack.append(v)
@@ -52,7 +52,7 @@ def update_nested_key(adict: Mapping | Sequence, key: str, call: Callable) -> No
 with open("some.json") as f:
    some_dict = json.load(f)
 
-update_nested_key(some_dict, "updated", lambda _: datetime.today().isoformat())
+update_nested_key(some_dict, "updated", datetime.today().isoformat())
 
 with open("updated.json", "w") as f:
    json.dump(some_dict, f, indent=4)
